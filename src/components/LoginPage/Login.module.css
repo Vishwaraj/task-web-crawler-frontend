@@ -1,0 +1,19 @@
+
+.container > img {
+    width: 13vw;
+}
+
+.container {
+    text-align: center;
+    margin-top: 12rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    justify-content: center;
+    margin-left: 30rem;
+    margin-top: 1rem;
+    gap: 1rem;
+}

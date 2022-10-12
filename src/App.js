@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { createContext, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import List from './components/List/List';
+import Login from './components/LoginPage/Login';
+
+export const store = createContext();
 function App() {
+
+  const [list, setList] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<>
+ <store.Provider value={{list, setList}} >
+ <Routes>
+  <Route path='/' element={<Login />}  />
+  <Route path='/connections' element={<List/>}  />
+
+ </Routes>
+ 
+ 
+ </store.Provider>
+
+</>
   );
 }
 
